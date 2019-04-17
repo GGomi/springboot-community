@@ -17,7 +17,7 @@ import static org.hamcrest.Matchers.is;
 
 @RunWith(SpringRunner.class)
 @DataJpaTest
-public class JpaMappingTest {
+public class RepositoryTest {
     private final String boardTestTitle = "테스트";
     private final String email = "test@gmail.com";
 
