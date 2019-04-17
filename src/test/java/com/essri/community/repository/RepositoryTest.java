@@ -45,7 +45,7 @@ public class RepositoryTest {
     }
 
     @Test
-    public void 체크() {
+    public void JPA_체크() {
         User user = userRepository.findByEmail(email);
         assertThat(user.getName(), is("essri"));
         assertThat(user.getPassword(), is("test"));
