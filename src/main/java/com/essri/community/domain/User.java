@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.security.Principal;
 import java.time.LocalDateTime;
 
 @Getter
@@ -30,6 +31,13 @@ public class User implements Serializable {
     @Column(name = "email")
     private String email;
 
+    @Column
+    private String principal;
+
+    @Column
+    @Enumerated(value = EnumType.STRING)
+    private SocialType socialType;
+
     @CreationTimestamp
     @Column(name = "created_at")
     private LocalDateTime createdAt;
@@ -39,9 +47,12 @@ public class User implements Serializable {
     private LocalDateTime updatedAt;
 
     @Builder
-    public User(String name, String password, String email) {
+    public User(String name, String password, String email, String principal, SocialType socialType) {
         this.name = name;
         this.password = password;
         this.email = email;
+        this.principal = principal;
+        this.socialType = socialType;
     }
+
 }
