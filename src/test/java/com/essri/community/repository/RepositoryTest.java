@@ -1,10 +1,8 @@
-package com.essri.community;
+package com.essri.community.repository;
 
 import com.essri.community.domain.Board;
 import com.essri.community.domain.BoardType;
 import com.essri.community.domain.User;
-import com.essri.community.repository.BoardRepository;
-import com.essri.community.repository.UserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -19,7 +19,7 @@ public enum SocialType {
         return ROLE_PREFIX + name.toUpperCase();
     }
 
-    public String getName() {
+    public String getValue() {
         return name;
     }
 
