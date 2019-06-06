@@ -2,7 +2,6 @@ package com.essri.community.service;
 
 import com.essri.community.domain.Board;
 import com.essri.community.repository.BoardRepository;
-import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -10,10 +9,13 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 @Service
-@RequiredArgsConstructor
 public class BoardFindService {
 
-    private final BoardRepository boardRepository;
+    private BoardRepository boardRepository;
+
+    public BoardFindService(BoardRepository boardRepository) {
+        this.boardRepository = boardRepository;
+    }
 
     public Page<Board> findBoardList(Pageable pageable) {
 

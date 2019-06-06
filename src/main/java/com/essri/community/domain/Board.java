@@ -4,8 +4,6 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -34,12 +32,12 @@ public class Board implements Serializable {
     @Enumerated(EnumType.STRING)
     private BoardType boardType;
 
+//    @CreationTimestamp
     @Column(name = "created_at")
-    @CreationTimestamp
     private LocalDateTime createdAt;
 
+//    @UpdateTimestamp
     @Column(name = "updated_at")
-    @UpdateTimestamp
     private LocalDateTime updatedAt;
 
     @OneToOne(fetch = FetchType.LAZY)

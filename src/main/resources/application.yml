@@ -1,12 +1,19 @@
 spring:
   profiles:
     active: local
+custom:
+  oauth2:
+    kakao:
+      client-id:
+
 
 ---
 spring:
   profiles: local
+  thymeleaf:
+    check-template-location: true
   jpa:
-    show-sql: true
+    show-sql: false
     database-platform: org.hibernate.dialect.H2Dialect
   h2:
     console:
@@ -16,3 +23,13 @@ spring:
     driverClassName: org.h2.Driver
     username: sa
     password:
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id:
+            client-secret:
+          facebook:
+            client-id:
+            client-secret:
